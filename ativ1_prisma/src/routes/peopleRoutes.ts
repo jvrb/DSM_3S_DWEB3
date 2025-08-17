@@ -4,8 +4,9 @@ import { createPeople, deletePeople, getPeople, updatePeople } from "../controll
 const router = express.Router()
 
 router.get("/", getPeople)
-router.post("/cadastrarPessoa", createPeople)
-router.put("/editPessoa", updatePeople)
-router.delete("/delPessoa", deletePeople)
+// router.get("/:id", getOnePeople)
+router.post("/", createPeople)
+router.put("/:id", updatePeople)
+router.delete("/:id", deletePeople)
 
 export const peopleRoutes = router

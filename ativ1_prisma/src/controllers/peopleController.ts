@@ -10,6 +10,19 @@ export const getPeople = async(req: Request, res: Response) => {
     res.json(peoples)
 }
 
+// export const getOnePeople = async(req: Request, res: Response) => {
+//     const { id } = req.params
+//     console.log(id)
+//     const people = await prisma.pessoa.findUnique({
+//         where: {
+//             id: Number(id)
+//         }
+//     })
+//     // debug
+//     console.log("Pessoas Encontradas:", people)
+//     res.json(people)
+// }
+
 export const createPeople = async(req: Request, res: Response) => {
     const { nome, email } = req.body
     const people = await prisma.pessoa.create({

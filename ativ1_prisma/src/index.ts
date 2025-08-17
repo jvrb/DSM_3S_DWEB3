@@ -1,8 +1,8 @@
 import express from "express"
 import dotenv from "dotenv"
 import { peopleRoutes } from "./routes/peopleRoutes"
+import { peopleCarsRoutes } from "./routes/peopleCarsRoutes"
 // import { carsRoutes } from "./routes/carsRoutes"
-// import { pepopleCarsRoutes } from "./routes/peopleCarsRoutes"
 
 // config
 dotenv.config()
@@ -15,7 +15,8 @@ app.get("/", (req, res) => {
 
 app.use("/pessoas", peopleRoutes)
 // app.use("/carros", carsRoutes)
-// app.use("/alugados", pepopleCarsRoutes)
+app.use("/alugados", peopleCarsRoutes)
+
 
 
 app.listen(3000, () => {
