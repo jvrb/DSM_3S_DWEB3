@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Cliente</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cadastrar Cliente</h1>
+        </header>
+        <main>
+            <form id="createPeopleForm">
+                <section class="inputWrap">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" placeholder="Nome completo" required>
+                </section>
+                <section class="inputWrap">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" placeholder="nome@email.com" required>
+                </section>
+                <section class="inputWrap">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" name="telefone" placeholder="012982345678" required>
+                </section>
+                <button name="cadastrarCliente">Cadastrar</button>
+            </form>
+            <section id="sectionListCliente">
+                <ul id="listCliente">
+
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="../pagesCliente/createPeople.js"></script>
+</body>
+</html>

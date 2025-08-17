@@ -19,6 +19,9 @@ app.use(express.static(path.join(__dirname, "views")))
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "views", "index.html"))
 })
+app.get("/cadastrarCliente", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "./pagesCliente/createPeople.html"))
+})
 app.use("/pessoas", peopleRoutes)
 app.use("/carros", carsRoutes)
 app.use("/alugados", peopleCarsRoutes)
