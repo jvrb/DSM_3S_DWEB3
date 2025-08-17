@@ -22,14 +22,14 @@ export const updatePeople = async(req: Request, res: Response) => {
     const { id } = req.params
     const { nome, email} = req.body
 
-    const people = await prisma.pessoa.update({
+    const newPeople = await prisma.pessoa.update({
         where: { id: Number(id) },
         data: {
             nome,
             email
         }
     })
-    res.json(people)
+    res.json(newPeople)
 }
 
 export const deletePeople = async(req: Request, res: Response) => {
