@@ -17,8 +17,18 @@ model Pessoa{
   id      Int @id @default(autoincrement())
   nome    String
   email   String @unique
+  telefone Telefone[]
   carros  PessoaPorCarro[]
   @@map("pessoa")
+}
+
+model Telefone {
+  id        Int @id @default(autoincrement())
+  numero    String
+  pessoaId  Int
+  pessoa    Pessoa @relation(fields: [pessoaId], references: [id])
+  @@unique([pessoaId])
+  @@map("telefone")
 }
 
 model Carro {
