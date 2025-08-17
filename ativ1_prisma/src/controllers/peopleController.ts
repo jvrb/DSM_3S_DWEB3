@@ -24,11 +24,23 @@ export const getPeople = async(req: Request, res: Response) => {
 // }
 
 export const createPeople = async(req: Request, res: Response) => {
-    const { nome, email } = req.body
+    const { nome, email, telefone } = req.body
     const people = await prisma.pessoa.create({
         data: {nome, email},
     })
-    res.status(201).json(people)
+    await prisma.telefone.create({
+        data: {
+            numero: telefone,
+            pessoaId: people.id
+        }
+    })
+    const peopleWithTelefone = await prisma.pessoa.findUnique({
+        where: {id: people.id},
+        include: {
+            telefone: true
+        }
+    })
+    res.status(201).json(peopleWithTelefone)
 }
 
 export const updatePeople = async(req: Request, res: Response) => {
