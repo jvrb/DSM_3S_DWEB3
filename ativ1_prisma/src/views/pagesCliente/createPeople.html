@@ -8,21 +8,24 @@
 <body>
     <div class="container">
         <header>
+            <a href="/">
+                <button>Voltar</button>
+            </a>
             <h1>Cadastrar Cliente</h1>
         </header>
         <main>
             <form id="createPeopleForm">
                 <section class="inputWrap">
                     <label for="nome">Nome:</label>
-                    <input type="text" name="nome" placeholder="Nome completo" required>
+                    <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
                 </section>
                 <section class="inputWrap">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" placeholder="nome@email.com" required>
+                    <input type="email" id="email" name="email" placeholder="nome@email.com" required>
                 </section>
                 <section class="inputWrap">
                     <label for="telefone">Telefone:</label>
-                    <input type="tel" name="telefone" placeholder="012982345678" required>
+                    <input type="tel" id="telefone" name="telefone" placeholder="012982345678" required>
                 </section>
                 <button name="cadastrarCliente">Cadastrar</button>
             </form>
