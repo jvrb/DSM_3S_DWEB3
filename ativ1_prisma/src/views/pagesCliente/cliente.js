@@ -11,15 +11,13 @@ async function loadClientes() {
         const li = document.createElement("li")
         li.innerHTML = `
             <div class="card">
-                <div class="cardHeader">
-                    <span>Nome:</span><strong>${cliente.nome}</strong>
-                </div>
                 <div class="cardBody">
-                    <class="bodyLeft">
+                    <div class="bodyLeft">
+                        <p><span>Nome:</span><strong>${cliente.nome}</strong></p>
                         <p><span>Email:</span>${cliente.email}</p>
                         ${cliente.telefone.map((element) => `<p><span>Telefone: </span>${element.numero}</p>`).join("")}        
                     </div> 
-                    <class="bodyRight">
+                    <div class="bodyRight">
                         <button onclick="editarCliente(${cliente.id})">Editar</button>   
                         <button onclick="deleteCliente(${cliente.id})">Excluir</button>      
                     </div> 

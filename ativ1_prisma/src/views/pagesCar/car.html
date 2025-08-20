@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../style.css">
+    <title>Cadastrar Carro</title>
+</head>
+<body>
+    <div class="containerWithCard">
+        <header>
+            <a href="/">
+                <button>Voltar</button>
+            </a>
+            <h1>Cadastrar Carro</h1>
+        </header>
+        <main>
+            <form id="createCarForm">
+                <section class="inputWrap">
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" name="modelo" placeholder="Palio" required>
+                </section>
+                <section class="inputWrap">
+                    <label for="marca">Marca:</label>
+                    <input type="text" id="marca" name="marca" placeholder="Fiat" required>
+                </section>
+                <section class="inputWrap">
+                    <label for="ano">Ano:</label>
+                    <input type="text" id="ano" name="ano" placeholder="2025" required>
+                </section>
+                <button name="cadastrarCliente">Cadastrar</button>
+            </form>
+            <section id="sectionList">
+                <ul id="listCarro">
+
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="../pagesCar/car.js"></script>
+</body>
+</html>

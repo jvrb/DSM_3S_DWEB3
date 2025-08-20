@@ -20,8 +20,13 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "views", "index.html"))
 })
 app.get("/cadastrarCliente", (req, res) => {
-    res.sendFile(path.join(__dirname, "views", "./pagesCliente/createPeople.html"))
+    res.sendFile(path.join(__dirname, "views", "./pagesCliente/cliente.html"))
 })
+app.get("/cadastrarCarro", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "./pagesCar/car.html"))
+})
+
+
 app.use("/pessoas", peopleRoutes)
 app.use("/carros", carsRoutes)
 app.use("/alugados", peopleCarsRoutes)
