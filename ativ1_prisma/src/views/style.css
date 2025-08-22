@@ -165,3 +165,25 @@ body {
 ul#idListResult{
     list-style: none;    
 }
+
+#formCliente{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    & #clientForm {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+}
+
+#formCarro{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    & #carForm {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+}

@@ -84,15 +84,15 @@ export const updatePeople = async (req: Request, res: Response) => {
             pessoaId: Number(id)
         }
     })
-    
-    if (!existeTelfone) {
+
+    if (!existeTelfone && telefone !== "") {
         await prisma.telefone.create({
             data: {
                 numero: telefone,
                 pessoaId: Number(id)
             }
         })
-    } else {
+    } else if (telefone !== ""){
         await prisma.telefone.update({
             where: { pessoaId: Number(id) },
             data: {
