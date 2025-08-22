@@ -78,14 +78,13 @@ export const createPeople = async (req: Request, res: Response) => {
 export const updatePeople = async (req: Request, res: Response) => {
     const { id } = req.params
     const { nome, email, telefone } = req.body
-    console.log(nome, email, telefone)
 
     const existeTelfone = await prisma.telefone.findUnique({
         where: {
             pessoaId: Number(id)
         }
     })
-    console.log(existeTelfone)
+    
     if (!existeTelfone) {
         await prisma.telefone.create({
             data: {

@@ -11,12 +11,12 @@ async function loadCars() {
     carros.forEach(carro => {
         const li = document.createElement("li")
         li.innerHTML = `
-            <div class="card">
+            <div class="card ${carro.pessoas != "" ? "redbg" : ""}">
                 <div class="cardBody">
                     <div class="bodyLeft">
                         <p><span>Marca: </span><strong>${carro.marca}</strong></p>
                         <p><span>Modelo: </span>${carro.modelo}</p>    
-                        <p><span>Ano: </span>${carro.ano}</p>   
+                        <p><span>Ano: </span>${carro.ano}</p> 
                     </div> 
                     <div class="bodyRight">
                         <button onclick="editarCar(${carro.id})">Editar</button>   

@@ -28,7 +28,7 @@ async function loadAlugados() {
             <div class="card">
                 <div class="cardBody">
                     <div class="bodyLeft">
-                        <div class="dadoCliente">
+                        <div class="dadosCliente">
                             <p><span>Cliente: </span><strong>${dadosCliente.nome}</strong></p>
                             <p><span>Email: </span>${dadosCliente.email}</p>    
                             ${dadosCliente.telefone.map((element) => `<p><span>Telefone: </span>${element.numero}</p>`).join("")}

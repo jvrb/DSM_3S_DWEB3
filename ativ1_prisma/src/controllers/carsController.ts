@@ -1,10 +1,15 @@
 import { PrismaClient } from "@prisma/client";
+import { info } from "console";
 import { Request, Response } from "express";
 
 const prisma = new PrismaClient()
 
 export const getCar = async(req: Request, res: Response) => {
-    const cars = await prisma.carro.findMany()
+    const cars = await prisma.carro.findMany({
+        include: {
+            pessoas: true
+        }
+    })
     res.json(cars)
 }
 
@@ -47,13 +52,32 @@ export const getOneCar = async (req: Request, res: Response) => {
 export const updateCars = async(req: Request, res: Response) => {
     const { id } = req.params
     const { modelo, marca, ano} = req.body
+    const infoDb = await prisma.carro.findUnique({
+        where: {
+            id: Number(id)
+        }
+    })
+
+    let newModelo:any = infoDb?.modelo
+    let newMarca:any = infoDb?.marca
+    let newAno:any = infoDb?.ano
+
+    if (modelo && modelo != "") {
+        newModelo = modelo
+    }
+    if (marca && marca != "") {
+        newMarca = marca
+    }
+    if (ano && ano != "") {
+        newAno = ano
+    }
 
     const newCar = await prisma.carro.update({
         where: { id: Number(id) },
         data: {
-            modelo,
-            marca,
-            ano
+            modelo: newModelo,
+            marca: newMarca,
+            ano: newAno
         }
     })
     res.json(newCar)
