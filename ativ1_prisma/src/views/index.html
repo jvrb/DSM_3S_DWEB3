@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Locadora de Carros</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Locadora de Carros</h1>
+        </header>
+        <main>
+            <section class="buttons">
+                <a href="/cadastrarCliente">
+                    <button>Cadastrar Pessoas</button>
+                </a>
+                <a href="/cadastrarCarro">
+                    <button>Cadastrar Carros</button>
+                </a>
+                <a href="/cadastrarAluguel">
+                    <button>Cadastrar Aluguel</button>
+                </a>
+            </section>
+            <section id="formCliente">
+                <form id="clientForm">
+                    <label for="cliente">Cliente ID:</label>
+                    <input type="text" name="cliente" id="cliente" placeholder="ID do cliente">
+                    <button>Pesquisar</button>
+                </form>
+            </section>
+            <section id="formCarro">
+                <form id="carForm">
+                    <label for="carro">Carro ID:</label>
+                    <input type="text" name="carro" id="carro" placeholder="ID do carro">
+                    <button>Pesquisar</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+    <div class="containerWithCard">
+        <section class="listResult">
+            <ul id="idListResult">
+
+            </ul>
+        </section>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
