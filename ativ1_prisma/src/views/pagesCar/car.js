@@ -14,12 +14,12 @@ async function loadCars() {
             <div class="card">
                 <div class="cardBody">
                     <div class="bodyLeft">
-                        <p><span>Marca:</span><strong>${carro.marca}</strong></p>
-                        <p><span>Modelo:</span>${carro.modelo}</p>    
-                        <p><span>Ano:</span>${carro.ano}</p>   
+                        <p><span>Marca: </span><strong>${carro.marca}</strong></p>
+                        <p><span>Modelo: </span>${carro.modelo}</p>    
+                        <p><span>Ano: </span>${carro.ano}</p>   
                     </div> 
                     <div class="bodyRight">
-                        <button onclick="editarCar()">Editar</button>   
+                        <button onclick="editarCar(${carro.id})">Editar</button>   
                         <button onclick="deleteCar(${carro.id})">Excluir</button>      
                     </div> 
                 </div>
@@ -30,7 +30,7 @@ async function loadCars() {
     });
 }
 
-carForm.addEventListener("submit", async(e) => {
+carForm.addEventListener("submit", async (e) => {
     e.preventDefault()
 
     const marca = document.getElementById("marca").value
@@ -47,8 +47,34 @@ carForm.addEventListener("submit", async(e) => {
 })
 
 async function deleteCar(id) {
-    await fetch(`${API_URL}/${id}`, {method: "DELETE"});
+    await fetch(`${API_URL}/${id}`, { method: "DELETE" });
     loadCars();
+}
+
+async function editarCar(id) {
+    try {
+        const newModelo = prompt("modelo")
+        const newMarca = prompt("marca")
+        const newAno = Number(prompt("ano"))
+
+        if (modelo && marca && ano) {
+            await fetch(`${API_URL}/${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    modelo: newModelo,
+                    marca: newMarca,
+                    ano: newAno
+                })
+
+            });
+
+            loadCars()
+        }
+    }catch(e){
+        console.log("Digite as informações")
+    }
+
 }
 
 loadCars()

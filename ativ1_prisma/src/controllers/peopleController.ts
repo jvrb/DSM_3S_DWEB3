@@ -15,12 +15,30 @@ export const getPeople = async (req: Request, res: Response) => {
     res.json(peoples)
 }
 
+export const getAvaiblePeople = async (req: Request, res: Response) => {
+    const peoples = await prisma.pessoa.findMany({
+        where: {
+            carros: {
+                none: {}
+            }
+        },
+        include: {
+            telefone: true
+        }
+    })
+    // debug
+    console.log("Pessoas Encontradas:", peoples)
+    res.json(peoples)
+}
+
 export const getOnePeople = async (req: Request, res: Response) => {
     const { id } = req.params
-    console.log(id)
     const people = await prisma.pessoa.findUnique({
         where: {
             id: Number(id)
+        },
+        include: {
+            telefone: true
         }
     })
     // debug

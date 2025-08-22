@@ -10,6 +10,7 @@ export const getPeopleCars = async(req: Request, res: Response) => {
 
 export const createPeopleCars = async(req: Request, res: Response) => {
     const {  pessoaId, carroId } = req.body
+    console.log(pessoaId, carroId)
     const newRent = await prisma.pessoaPorCarro.create({
         data: {
             pessoaId,

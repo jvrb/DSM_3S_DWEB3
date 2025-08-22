@@ -58,6 +58,11 @@
                 & input {
                     padding: .3rem;
                 }
+
+                & select {
+                    width: 100%;
+                    border: none;
+                }
             }
 
             & button {
@@ -116,6 +121,13 @@
                                 background-color: rgb(238, 85, 85);
                             }
                             & button:nth-child(2):hover{
+                                background-color: red;
+                                color: #fff;
+                            }
+                            & button#excluir{
+                                background-color: rgb(238, 85, 85);
+                            }
+                            & button#excluir:hover{
                                 background-color: red;
                                 color: #fff;
                             }

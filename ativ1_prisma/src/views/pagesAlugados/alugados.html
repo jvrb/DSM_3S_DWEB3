@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../style.css">
+    <title>Cadastrar Carro</title>
+</head>
+<body>
+    <div class="containerWithCard">
+        <header>
+            <a href="/">
+                <button>Voltar</button>
+            </a>
+            <h1>Cadastrar Aluguel</h1>
+        </header>
+        <main>
+            <form id="createAlugadosForm">
+                <section class="inputWrap">
+                    <label for="modelo">Modelo:</label>
+                    <select id="carGroup" required>
+                        <option disabled selected>Selecionar</option>
+                    </select>
+                </section>
+                <section class="inputWrap">
+                    <label for="cliente">Cliente:</label>
+                    <select id="clienteGroup" required>
+                        <option disabled selected>Selecionar</option>
+                    </select>
+                </section>
+                <button name="cadastrarCliente">Cadastrar</button>
+            </form>
+            <section id="sectionList">
+                <ul id="listAlugados">
+
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="../pagesAlugados/alugados.js"></script>
+</body>
+</html>
