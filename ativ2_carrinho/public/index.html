@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Lista de Compras</title>
+	</head>
+	<body>
+		<section id="form">
+			<h1>Lista de Compras</h1>
+			<form id="formProduto">
+				<div class="input-wrap">
+					<input type="hidden" name="id" id="produtoId" />
+					<label for="nomeProduto">Nome do Produto</label>
+					<input
+						type="text"
+						id="nomeProduto"
+						name="nomeProduto"
+						placeholder="Abacaxi"
+					/>
+				</div>
+				<div class="input-wrap">
+					<label for="valorProduto">Valor do Produto</label>
+					<input
+						type="text"
+						id="valorProduto"
+						name="valorProduto"
+						placeholder="8.50"
+					/>
+				</div>
+				<button>Adicionar Produto</button>
+			</form>
+		</section>
+		<ul id="listItems"></ul>
+		<script src="./script.js"></script>
+	</body>
+</html>
