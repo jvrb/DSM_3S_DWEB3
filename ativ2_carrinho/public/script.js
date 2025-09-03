@@ -14,7 +14,7 @@ async function carregarProdutos() {
 
 	produtos.forEach((produto) => {
 		const li = document.createElement("li");
-
+		li.id = produto._id;
 		li.innerHTML = `
             <div class="liLeft">
                 <p>Nome Produto: <strong>${produto.nomeProduto}</strong></p>
@@ -53,23 +53,36 @@ async function salvarProduto(event) {
 		});
 	}
 
+	document.getElementById("produtoId").value = "";
+
 	form.reset();
 	carregarProdutos();
 }
 
-function editarProduto(id, nome, valor) {
+async function editarProduto(id, nome, valor) {
+	await carregarProdutos();
 	document.getElementById("produtoId").value = id;
 	document.getElementById("nomeProduto").value = nome;
 	document.getElementById("valorProduto").value = valor;
+
+	const produtoId = document.getElementById(id);
+	produtoId.classList.add("selecionado");
 }
 
 async function excluirProduto(id, nome, valor) {
-	if (confirm(`Deseja excluir o produto ${nome} - ${valor}`)) {
-		await fetch(`${API_URL}/${id}`, {
-			method: "DELETE",
-		});
-		carregarProdutos();
-	}
+	const produtoId = document.getElementById(id);
+	produtoId.classList.add("deletar");
+
+	setTimeout(async () => {
+		if (confirm(`Deseja excluir o produto ${nome} - ${valor}`)) {
+			await fetch(`${API_URL}/${id}`, {
+				method: "DELETE",
+			});
+			carregarProdutos();
+		} else {
+			produtoId.classList.remove("deletar");
+		}
+	}, 100);
 }
 
 carregarProdutos();
