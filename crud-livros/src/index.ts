@@ -1,0 +1,24 @@
+import express from "express";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
+import cors from "cors";
+import livrosRoutes from "./routes/livrosRoutes";
+
+const app = express();
+const PORT = 3000;
+const MONGODB_URL = "mongodb://localhost:27017/crud_livros";
+
+app.use(bodyParser.json());
+app.use(cors());
+app.use(express.static("public"));
+app.use(express.json());
+
+mongoose.connect(MONGODB_URL)
+    .then(() => console.log('MongoDB Conectado'))
+    .catch(err => console.log('Erro ao conectar ao Banco de Dados: ', err))
+
+
+app.use('/livros', livrosRoutes)
+app.listen(3000, () => {
+	console.log("Servidor Rodando em http://localhost:3000");
+});

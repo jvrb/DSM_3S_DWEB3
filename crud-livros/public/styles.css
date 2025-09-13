@@ -1,0 +1,83 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+}
+
+main {
+	width: 20rem;
+	margin-inline: auto;
+	padding-top: 1.5rem;
+
+	& h1,
+	h2 {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	& form {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		margin-bottom: 1rem;
+
+		& .input-wrap {
+			display: flex;
+			flex-direction: column;
+
+			& input {
+				padding-left: 0.5rem;
+			}
+		}
+
+		& button,
+		input {
+			height: 2rem;
+		}
+
+		& button {
+			border-radius: 0.5rem;
+			border: 2px solid rgb(22, 132, 0);
+			background-color: rgb(0, 228, 0);
+
+			color: #fff;
+			font-weight: bold;
+		}
+	}
+}
+
+#listaLivros {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	& .livro-item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	& .btn {
+		height: 2rem;
+		width: 4rem;
+		border-radius: 0.5rem;
+	}
+
+	& .btn-editar {
+		background-color: rgb(3, 112, 255);
+		border: 2px solid rgb(0, 58, 133);
+		color: #fff;
+	}
+
+	& .btn-excluir {
+		background-color: rgb(255, 3, 3);
+		border: 2px solid rgb(133, 0, 0);
+		color: #fff;
+	}
+}
