@@ -1,0 +1,16 @@
+Funcionalidades do Sistema:
+1. Busca de Clima por Cidade:
+  O usuário digita o nome de uma cidade e o sistema retorna os dados climáticos atuais.
+2. Exibição das Informações:
+  o Nome da cidade e país -> name, sys.country
+  o Temperatura atual -> main.temp
+  o Sensação térmica  -> main.feels_like
+  o Umidade -> main.humidity
+  o Condição do tempo (ex.: "céu limpo", "chuva leve") -> weather[0].description
+  o Ícone representando a condição climática
+3. Tratamento de Erros:
+  o Mensagem quando a cidade não é encontrada
+  o Validação para evitar buscas vazias
+4. Interface Simples e Responsiva:
+  o Campo de entrada e botão “Buscar”
+  o Resultado exibido logo abaixo da busc

@@ -19,6 +19,6 @@ mongoose.connect(MONGODB_URL)
 
 
 app.use('/livros', livrosRoutes)
-app.listen(3000, () => {
+app.listen(PORT, () => {
 	console.log("Servidor Rodando em http://localhost:3000");
 });
