@@ -20,7 +20,7 @@ app.get('/search', async(req: Request, res: Response) => {
     
     try {
         const apiKey = process.env.API_KEY
-        const url_geo = `http://api.openweathermap.org/geo/1.0/direct?q=${cidade}&limit=5&appid=${apiKey}`
+        const url_geo = `http://api.openweathermap.org/geo/1.0/direct?q=${cidade}&limit=1&appid=${apiKey}`
         const response_geo = await axios.get(url_geo)
         console.log(response_geo.data)
         
