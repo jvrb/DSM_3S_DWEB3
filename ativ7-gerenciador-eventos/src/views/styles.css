@@ -1,0 +1,96 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin-block: auto;
+    background-color: rgb(24, 24, 24);
+    color: #fff;
+}
+
+.container {
+	margin: 0 auto;
+	text-align: center;
+}
+
+form {
+	margin-inline: auto;
+	width: 30rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	input {
+		height: 2rem;
+		border-radius: 0.5rem;
+		border: 1px solid #cdcdcd;
+		padding: 0.5rem;
+		box-sizing: border-box;
+	}
+    
+	button {
+        height: 2rem;
+		border-radius: 0.5rem;
+        border: 1px solid #cdcdcd;
+        background-color: #00ff44;
+        border-color: transparent;
+        font-weight: 600;
+        transition: 200ms;
+	}
+
+    button:hover {
+        background-color: #007a21;
+        color: #fff;
+    }
+}
+
+
+#eventos{
+    margin: 0 auto;
+    width: 30rem;
+
+    ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        li {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c2c2c;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            .buttons {
+                display: flex;
+                gap: .5rem;
+            }
+        }
+    }
+
+    #excluir, #alterar {
+        width: 4rem;
+        font-weight: 600;
+        color: #fff;
+        border-radius: .3rem;
+        padding: .5rem;
+        border: none;
+    }
+
+    #excluir {
+        background-color: red;
+        transition: 200ms;
+    }
+
+    #excluir:hover{
+        background-color: rgb(112, 1, 1);
+    }
+
+    #alterar {
+        background-color: rgb(96, 96, 254);
+    }
+
+    #alterar:hover {
+        background-color: rgb(52, 52, 134);
+    }
+}
