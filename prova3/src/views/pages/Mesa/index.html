@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Gerenciador de Mesa</title>
+	</head>
+	<body>
+		<div class="container">
+            <header>
+                <a href="../../index.html"><< Inicio</a>
+            </header>
+			<h1>Gerenciador de Mesa</h1>
+			<form id="formMesa">
+				<div class="bodyForm">
+                    <!-- 
+                        	numeroMesa: number;
+	                        capacidade: number;
+	                        localizacao: string;
+                    -->
+                    <input type="text" name="idMesa" hidden>
+					<div class="inputWrap">
+						<label for="numeroMesa">Numero da Mesa:</label>
+						<input type="number" id="numeroMesa" name="numeroMesa" />
+					</div>
+					<div class="inputWrap">
+						<label for="capacidade">Capacidade:</label>
+						<input type="number" id="capacidade" name="capacidade" />
+					</div>
+					<div class="inputWrap">
+						<label for="localizacao">localização:</label>
+						<input type="text" id="localizacao" name="localizacao">
+					</div>
+				</div>
+
+				<button>Adicionar Mesa</button>
+			</form>
+		</div>
+
+		<div id="mesa">
+			<ul id="listaMesa"></ul>
+		</div>
+		<script src="./script.js"></script>
+	</body>
+</html>

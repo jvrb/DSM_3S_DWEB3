@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Gerenciador de Reserva</title>
+	</head>
+	<body>
+		<div class="container">
+            <header>
+                <a href="../../index.html"><< Inicio</a>
+            </header>
+			<h1>Gerenciador de Reserva</h1>
+			<form id="formReserva">
+				<div class="bodyForm">
+                    <input type="text" name="idReserva" hidden>
+					<div class="inputWrap">
+						<label for="nomeCliente">Nome do Cliente:</label>
+						<input type="text" id="nomeCliente" name="nomeCliente" />
+					</div>
+					<div class="inputWrap">
+						<label for="contatoCliente">Telefone:</label>
+						<input type="text" id="contatoCliente" name="contatoCliente" />
+					</div>
+					<div class="inputWrap">
+						<label for="numeroMesa">Numero da mesa:</label>
+						<select name="numeroMesa" id="numeroMesa">
+                            <option value="" selected hidden>SELECIONE A MESA</option>
+                        </select>
+					</div>
+					<div class="inputWrap">
+						<label for="quatidadePessoas">Quantidade de Pessoas:</label>
+						<input type="number" id="quatidadePessoas" name="quatidadePessoas" />
+					</div>
+					<div class="inputWrap">
+						<label for="dataReserva">Data Reserva:</label>
+						<input type="datetime-local" id="dataReserva" name="dataReserva" />
+					</div>
+					<div class="inputWrap">
+						<label for="status">Status:</label>
+						<select name="status" id="status">
+							<option value="" selected hidden>Status</option>
+							<option value="reservado">Reservado</option>
+							<option value="ocupado">Ocupado</option>
+							<option value="finalizado">Finalizado</option>
+							<option value="cancelado">Cancelado</option>
+						</select>
+					</div>
+					<div class="inputWrap">
+						<label for="obsReserva">Observações:</label>
+						<textarea name="obsReserva" id="obsReserva" rows="3"></textarea>
+					</div>
+				</div>
+
+				<button>Adicionar Reserva</button>
+			</form>
+		</div>
+
+		<div id="Reserva">
+			<ul id="listaReserva">
+
+			</ul>
+		</div>
+		<script src="./script.js"></script>
+	</body>
+</html>
