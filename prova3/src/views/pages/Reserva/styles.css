@@ -25,7 +25,8 @@ form {
 			display: flex;
 			flex-direction: column;
 
-			input {
+			input,
+			select {
 				height: 2rem;
 				border-radius: 0.5rem;
 				border: 1px solid #cdcdcd;
@@ -56,30 +57,72 @@ form {
 	}
 }
 
+#reserva{
+	width: 100%;
+	margin: 0 auto;
+
+	#listaReserva{
+		padding-top: 1rem;
+		width: 60rem;
+		margin: 0 auto;
+		padding-left: 0;
+
+		p{
+			margin: 0;
+			padding: 0;
+			width: 33%;
+		}
+
+		.card{
+			background-color: rgb(37, 37, 37);
+			padding: 1rem;
+
+			.card-header{
+				display: flex;
+				justify-content: space-between;
+				padding: 1rem 0;
+				border-bottom: 1px solid #fff;
+			}
+
+			.card-body {
+				display: flex;
+				padding: 1rem 0;
+				justify-content: space-between;
+			}
+			.card-footer{
+				display: flex;
+
+				.card-buttons{
+					width: 100%;
+				}
+			}
+		}
+	}
+}
 
 #excluir,
-	#alterar {
-		width: 4rem;
-		font-weight: 600;
-		color: #fff;
-		border-radius: 0.3rem;
-		padding: 0.5rem;
-		border: none;
-	}
+#alterar {
+	width: 4rem;
+	font-weight: 600;
+	color: #fff;
+	border-radius: 0.3rem;
+	padding: 0.5rem;
+	border: none;
+}
 
-	#excluir {
-		background-color: red;
-		transition: 200ms;
-	}
+#excluir {
+	background-color: red;
+	transition: 200ms;
+}
 
-	#excluir:hover {
-		background-color: rgb(112, 1, 1);
-	}
+#excluir:hover {
+	background-color: rgb(112, 1, 1);
+}
 
-	#alterar {
-		background-color: rgb(96, 96, 254);
-	}
+#alterar {
+	background-color: rgb(96, 96, 254);
+}
 
-	#alterar:hover {
-		background-color: rgb(52, 52, 134);
-	}
+#alterar:hover {
+	background-color: rgb(52, 52, 134);
+}
